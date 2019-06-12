@@ -2,7 +2,7 @@ const q = require('daskeyboard-applet');
 // to access to the logger
 const logger = q.logger;
 
-class Countdown extends q.DesktopApp {
+class Timer extends q.DesktopApp {
 
   constructor() {
     super();
@@ -66,14 +66,14 @@ class Countdown extends q.DesktopApp {
         // Testing if it's the right time
         if ( (this.s >= this.seconds) && (this.m >= this.minutes) && (this.h >= this.hours) ) {
           // Send signal
-          logger.info("Countdown, Time. Sending signal.");
+          logger.info("Time is up. Sending signal.");
           // Just one signal need to be sent
           this.alreadySentASignal = true;
           return new q.Signal({
             points: [
               [new q.Point(this.config.color, this.config.effect)]
             ],
-            name: 'Countdown',
+            name: 'Timer',
             message: "Time's up!",
             isMuted: false
           });
@@ -95,7 +95,7 @@ class Countdown extends q.DesktopApp {
 
 
 module.exports = {
-  Countdown: Countdown
+  Timer: Timer
 }
 
-const applet = new Countdown();
+const applet = new Timer();
