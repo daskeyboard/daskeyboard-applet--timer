@@ -13,6 +13,7 @@ class Countdown extends q.DesktopApp {
   async applyConfig() {
 
     this.alreadySentASignal = false;
+    this.mustBeADifferentDay = false;
 
     var now = new Date();
     this.m = now.getMinutes();
@@ -37,6 +38,7 @@ class Countdown extends q.DesktopApp {
     while(this.hours>23){
       this.hours = this.hours-24;
       // Need to add a condition for the day
+      this.mustBeADifferentDay = true;
     }
 
   }
@@ -56,23 +58,29 @@ class Countdown extends q.DesktopApp {
       logger.info(this.h+">="+this.hours);
 
       if ( (this.s >= this.seconds) && (this.m >= this.minutes) && (this.h >= this.hours) ) {
+        if( ((this.mustBeADifferentDay) && (this.d!=now.getDay())) || (!this.mustBeADifferentDay) ){
+          // Send signal
+          logger.info("Countdown, Time. Sending signal.");
+          // Just one signal need to be sent
+          this.alreadySentASignal = true;
+          return new q.Signal({
+            points: [
+              [new q.Point('#FF0000', q.Effects.BLINK)]
+            ],
+            name: 'Countdown',
+            message: 'Ringggg Rinnng Rinngg!',
+            isMuted: false
+          });
+        } else {
+          // not right day
+          return null;
+        }
 
-        logger.info("Countdown, Time. Sending signal.");
-        // Just one signal need to be sent
-        this.alreadySentASignal = true;
-        return new q.Signal({
-          points: [
-            [new q.Point('#FF0000', q.Effects.BLINK)]
-          ],
-          name: 'Countdown',
-          message: 'Ringggg Rinnng Rinngg!',
-          isMuted: false
-        });
       } else {
         // not time
         return null;
       }
-    }else{
+    } else {
       // Already sent a signal. Applet stop running.
       return null;
     }
