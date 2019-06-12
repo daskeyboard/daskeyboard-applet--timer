@@ -46,7 +46,7 @@
         "label": "Hours",
         "help": "",
         "required": true,
-        "order": 3,
+        "order": 1,
         "value": "1",
         "controlType": "dropdown",
         "options": [{
@@ -411,7 +411,7 @@
         "label": "Seconds",
         "help": "",
         "required": true,
-        "order": 1,
+        "order": 3,
         "value": "10",
         "controlType": "dropdown",
         "options": [{
