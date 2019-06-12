@@ -11,6 +11,9 @@ class Countdown extends q.DesktopApp {
   }
 
   async applyConfig() {
+
+    this.alreadySentASignal = false;
+
     var now = new Date();
     this.m = now.getMinutes();
     this.s = now.getSeconds();
@@ -52,10 +55,11 @@ class Countdown extends q.DesktopApp {
     logger.info(this.m+">="+this.minutes);
     logger.info(this.h+">="+this.hours);
 
-    if ( (this.s >= this.seconds) && (this.m >= this.minutes) && (this.h >= this.hours)) {
+    if ( ((this.s >= this.seconds) && (this.m >= this.minutes) && (this.h >= this.hours)) && (!this.alreadySentASignal)) {
 
       logger.info("Countdown, Time. Sending signal.");
-
+      // Just one signal need to be sent
+      this.alreadySentASignal = true;
       return new q.Signal({
         points: [
           [new q.Point('#FF0000', q.Effects.BLINK)]
