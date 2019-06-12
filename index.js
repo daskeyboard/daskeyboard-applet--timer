@@ -71,10 +71,10 @@ class Countdown extends q.DesktopApp {
           this.alreadySentASignal = true;
           return new q.Signal({
             points: [
-              [new q.Point('#FF0000', q.Effects.BLINK)]
+              [new q.Point(this.config.color, this.config.effect)]
             ],
             name: 'Countdown',
-            message: 'Ringggg Rinnng Rinngg!',
+            message: "Time's up!",
             isMuted: false
           });
         } else {
