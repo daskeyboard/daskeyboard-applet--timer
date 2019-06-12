@@ -1,0 +1,79 @@
+{
+  "name": "daskeyboard-applet--countdown",
+  "displayName": "Countdown",
+  "publisher": "Das Keyboard",
+  "version": "1.0.0",
+  "description": "Set up a countdown.",
+  "longDescription": "Get countdown alerts directly on a Das Keybaord Q devices.",
+  "officialProductName": "Countdown",
+  "publisherName": "Das Keyboard",
+  "isSingleton": false,
+  "icon": "assets/icon.png",
+  "image": "assets/missing.png",
+  "authorName": "Das Keyboard",
+  "authorUrl": "https://twitter.com/daskeyboard",
+  "issuesUrl": "https://github.com/daskeyboard/daskeyboard-applet--countdown/issues",
+  "homePageUrl": "https://github.com/daskeyboard/daskeyboard-applet--countdown",
+  "developerRepoUrl": "https://github.com/daskeyboard/daskeyboard-applet--countdown",
+  "licenseUrl": "http://www.gnu.org/licenses/old-licenses/gpl-2.0.txt",
+  "changelogUrl": "CHANGELOG.md",
+  "readMeUrl": "README.md",
+  "readMeEndUserUrl": "README_ENDUSER.md",
+  "engines": {
+    "das-keyboard-q": "3.1.0"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "author": "Das Keyboard",
+  "license": "MIT",
+  "dependencies": {
+    "daskeyboard-applet": "^2.11.4"
+  },
+  "qConfig": {
+    "geometry": {
+      "width": 1,
+      "height": 1,
+      "origin": {
+        "x": 1,
+        "y": 1
+      }
+    },
+    "questions": [
+      {
+        "key": "seconds",
+        "label": "Choose how many seconds",
+        "help": "",
+        "required": true,
+        "order": 1,
+        "value": "10",
+        "controlType": "textbox"
+      },
+      {
+        "key": "minutes",
+        "label": "Choose how many minutes",
+        "help": "",
+        "required": true,
+        "order": 2,
+        "value": "10",
+        "controlType": "textbox"
+      },
+      {
+        "key": "hours",
+        "label": "Choose how many hours",
+        "help": "",
+        "required": true,
+        "order": 3,
+        "value": "10",
+        "controlType": "textbox"
+      }
+    ],
+    "requirements": {
+      "applet": {}
+    }
+  },
+  "devDependencies": {
+    "mocha": "^5.2.0"
+  }
+}
