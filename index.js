@@ -49,17 +49,22 @@ class Countdown extends q.DesktopApp {
 
       // Updating time values
       var now = new Date();
-      this.m = now.getMinutes();
-      this.s = now.getSeconds();
-      this.h = now.getHours();
 
-      // Checking values with logs
-      logger.info(this.s+">="+this.seconds);
-      logger.info(this.m+">="+this.minutes);
-      logger.info(this.h+">="+this.hours);
+      // Testing if it's the right day
+      if( (!this.mustBeADifferentDay) || ((this.mustBeADifferentDay) && (this.d!=now.getDay())) ){
 
-      if ( (this.s >= this.seconds) && (this.m >= this.minutes) && (this.h >= this.hours) ) {
-        if( ((this.mustBeADifferentDay) && (this.d!=now.getDay())) || (!this.mustBeADifferentDay) ){
+        // Getting the time
+        this.m = now.getMinutes();
+        this.s = now.getSeconds();
+        this.h = now.getHours();
+  
+        // Checking values with logs
+        logger.info(this.s+">="+this.seconds);
+        logger.info(this.m+">="+this.minutes);
+        logger.info(this.h+">="+this.hours);
+
+        // Testing if it's the right time
+        if ( (this.s >= this.seconds) && (this.m >= this.minutes) && (this.h >= this.hours) ) {
           // Send signal
           logger.info("Countdown, Time. Sending signal.");
           // Just one signal need to be sent
@@ -73,12 +78,12 @@ class Countdown extends q.DesktopApp {
             isMuted: false
           });
         } else {
-          // not right day
+          // not the right time
           return null;
         }
 
       } else {
-        // not time
+        // not the right day
         return null;
       }
     } else {
