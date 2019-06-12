@@ -1,12 +1,15 @@
-# Q Applet: Countdown
+# Q Applet: Timer
 
-Fear to forget something?
+Waiting for something? Fear to forget something?
 
-[GitHub repository](https://github.com/daskeyboard/daskeyboard-applet--countdown)
+The timer can countdown from up to 24 hours.
+Watch the time disapear and make your keyboard blink.
+
+[GitHub repository](https://github.com/daskeyboard/daskeyboard-applet--timer)
 
 ## Example
 
-![Countdown on a Das Keybaord Q](assets/image.png "Das Keyboard Q applet Countdown")
+![Timer on a Das Keybaord Q](assets/image.png "Das Keyboard Q applet Timer")
 
 ## Changelog
 
