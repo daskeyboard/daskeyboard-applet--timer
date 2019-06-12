@@ -43,33 +43,38 @@ class Countdown extends q.DesktopApp {
   }
 
   async run() {
+    if(!this.alreadySentASignal){
 
-    // Updating time values
-    var now = new Date();
-    this.m = now.getMinutes();
-    this.s = now.getSeconds();
-    this.h = now.getHours();
+      // Updating time values
+      var now = new Date();
+      this.m = now.getMinutes();
+      this.s = now.getSeconds();
+      this.h = now.getHours();
 
-    // Checking values with logs
-    logger.info(this.s+">="+this.seconds);
-    logger.info(this.m+">="+this.minutes);
-    logger.info(this.h+">="+this.hours);
+      // Checking values with logs
+      logger.info(this.s+">="+this.seconds);
+      logger.info(this.m+">="+this.minutes);
+      logger.info(this.h+">="+this.hours);
 
-    if ( ((this.s >= this.seconds) && (this.m >= this.minutes) && (this.h >= this.hours)) && (!this.alreadySentASignal)) {
+      if ( (this.s >= this.seconds) && (this.m >= this.minutes) && (this.h >= this.hours) ) {
 
-      logger.info("Countdown, Time. Sending signal.");
-      // Just one signal need to be sent
-      this.alreadySentASignal = true;
-      return new q.Signal({
-        points: [
-          [new q.Point('#FF0000', q.Effects.BLINK)]
-        ],
-        name: 'Countdown',
-        message: 'Ringggg Rinnng Rinngg',
-        isMuted: false
-      });
-    } else {
-      // not time
+        logger.info("Countdown, Time. Sending signal.");
+        // Just one signal need to be sent
+        this.alreadySentASignal = true;
+        return new q.Signal({
+          points: [
+            [new q.Point('#FF0000', q.Effects.BLINK)]
+          ],
+          name: 'Countdown',
+          message: 'Ringggg Rinnng Rinngg',
+          isMuted: false
+        });
+      } else {
+        // not time
+        return null;
+      }
+    }else{
+      // Already sent a signal. Applet stop running.
       return null;
     }
   }
