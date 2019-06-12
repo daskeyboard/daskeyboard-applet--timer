@@ -15,6 +15,7 @@ class Countdown extends q.DesktopApp {
     this.alreadySentASignal = false;
     this.mustBeADifferentDay = false;
 
+    // Initialize configuration time
     var now = new Date();
     this.m = now.getMinutes();
     this.s = now.getSeconds();
