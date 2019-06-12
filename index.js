@@ -19,7 +19,6 @@ class Countdown extends q.DesktopApp {
     this.s = now.getSeconds();
     this.h = now.getHours();
     this.d = now.getDay();
-    logger.info("Showing the time into ApplyConfi(): "+now.getTime());
 
     // Creating triggered values
     this.seconds = this.s + parseInt(this.config.seconds);
@@ -66,7 +65,7 @@ class Countdown extends q.DesktopApp {
             [new q.Point('#FF0000', q.Effects.BLINK)]
           ],
           name: 'Countdown',
-          message: 'Ringggg Rinnng Rinngg',
+          message: 'Ringggg Rinnng Rinngg!',
           isMuted: false
         });
       } else {
