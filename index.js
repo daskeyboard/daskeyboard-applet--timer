@@ -15,6 +15,7 @@ class Countdown extends q.DesktopApp {
     this.m = now.getMinutes();
     this.s = now.getSeconds();
     this.h = now.getHours();
+    this.d = now.getDay();
     logger.info("Showing the time into ApplyConfi(): "+now.getTime());
 
     // Creating triggered values
@@ -23,6 +24,18 @@ class Countdown extends q.DesktopApp {
     this.hours = this.h +  parseInt(this.config.hours);
 
     // Need to update the value when there are 65 seconds or minutes.
+    while(this.seconds>59){
+      this.seconds = this.seconds-60;
+      this.minutes = this.minutes+1;
+    }
+    while(this.minutes>59){
+      this.minutes = this.minutes-60;
+      this.hours = this.hours+1;
+    }
+    while(this.hours>23){
+      this.hours-24;
+      // Need to add a condition for the day
+    }
 
   }
 
@@ -33,6 +46,11 @@ class Countdown extends q.DesktopApp {
     this.m = now.getMinutes();
     this.s = now.getSeconds();
     this.h = now.getHours();
+
+    // Checking values with logs
+    logger.info(this.s+">="+this.seconds);
+    logger.info(this.m+">="+this.minutes);
+    logger.info(this.h+">="+this.hours);
 
     if ( (this.s >= this.seconds) && (this.m >= this.minutes) && (this.h >= this.hours)) {
 
