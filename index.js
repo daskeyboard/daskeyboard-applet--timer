@@ -35,7 +35,7 @@ class Countdown extends q.DesktopApp {
       this.hours = this.hours+1;
     }
     while(this.hours>23){
-      this.hours-24;
+      this.hours = this.hours-24;
       // Need to add a condition for the day
     }
 
