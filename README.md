@@ -1,9 +1,8 @@
 # Q Applet: Timer
 
-Waiting for something? Fear to forget something?
+Need a block of time?
 
-The timer can countdown from up to 24 hours.
-Watch the time disapear and make your keyboard blink.
+The timer can countdown from up to 24 hours. Watch the remaining time run away. Configure the timer and effect to your linking.
 
 [GitHub repository](https://github.com/daskeyboard/daskeyboard-applet--timer)
 
