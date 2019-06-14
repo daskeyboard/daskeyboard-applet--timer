@@ -59,9 +59,9 @@ class Timer extends q.DesktopApp {
         this.h = now.getHours();
   
         // Checking values with logs
-        // logger.info(this.s+">="+this.seconds);
-        // logger.info(this.m+">="+this.minutes);
-        // logger.info(this.h+">="+this.hours);
+        logger.info(this.s+">="+this.seconds);
+        logger.info(this.m+">="+this.minutes);
+        logger.info(this.h+">="+this.hours);
 
         // Testing if it's the right time
         if ( (this.s >= this.seconds) && (this.m >= this.minutes) && (this.h >= this.hours) ) {
