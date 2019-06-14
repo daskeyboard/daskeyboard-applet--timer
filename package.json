@@ -42,12 +42,12 @@
     },
     "questions": [
       {
-        "key": "hours",
+        "key": "Enter duration of this timer. Hours:",
         "label": "Hours",
         "help": "",
         "required": true,
         "order": 1,
-        "value": "1",
+        "value": "0",
         "controlType": "dropdown",
         "options": [{
           "key": 0,
@@ -153,7 +153,7 @@
       },
       {
         "key": "minutes",
-        "label": "Minutes",
+        "label": "Minutes:",
         "help": "",
         "required": true,
         "order": 2,
@@ -408,13 +408,54 @@
       },
       {
         "key": "seconds",
-        "label": "Seconds",
+        "label": "Seconds:",
         "help": "",
         "required": true,
         "order": 3,
-        "value": "10",
+        "value": "0",
         "controlType": "dropdown",
-        "options": [{
+        "options": [
+        {
+          "key": 0,
+          "value": "0"
+        },
+        {
+          "key": 1,
+          "value": "1"
+        },
+        {
+          "key": 2,
+          "value": "2"
+        },
+        {
+          "key": 3,
+          "value": "3"
+        },
+        {
+          "key": 4,
+          "value": "4"
+        },
+        {
+          "key": 5,
+          "value": "5"
+        },
+        {
+          "key": 6,
+          "value": "6"
+        },
+        {
+          "key": 7,
+          "value": "7"
+        },
+        {
+          "key": 8,
+          "value": "8"
+        },
+        {
+          "key": 9,
+          "value": "9"
+        },
+        {
           "key": 10,
           "value": "10"
         },
@@ -622,7 +663,7 @@
       },
       {
         "key": "color",
-        "label": "Select a color",
+        "label": "Select notification color",
         "help": "",
         "required": true,
         "order": 4,
@@ -631,7 +672,7 @@
       },
       {
         "key": "effect",
-        "label": "Select a notification effect",
+        "label": "Select notification effect",
         "help": "",
         "required": true,
         "order": 5,
