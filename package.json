@@ -42,8 +42,8 @@
     },
     "questions": [
       {
-        "key": "Enter duration of this timer. Hours:",
-        "label": "Hours",
+        "key": "hours",
+        "label": "Enter duration of this timer. Hours:",
         "help": "",
         "required": true,
         "order": 1,
